@@ -1,0 +1,6 @@
+*.log
+*.pot
+*.py[cod]
+__pycache__/
+local_settings.py
+*.sqlite3
