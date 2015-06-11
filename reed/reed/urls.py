@@ -16,9 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from hello import views
+from catalog import views as catalog_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.home, name='home')
+    url(r'^$', catalog_views.book_list, name='home')
 ]
