@@ -20,5 +20,7 @@ from catalog import views as catalog_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^books/(?P<book_id>\d+)/$', catalog_views.book_detail,
+        name='book-detail'),
     url(r'^$', catalog_views.book_list, name='home')
 ]

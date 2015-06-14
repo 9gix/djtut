@@ -2,7 +2,7 @@
 {% block content %}
 <ul>
   {% for book in books %}
-  <li>{{ book.title }} - {{ book.isbn13 }}</li>
+  <li><a href="{{ book.get_absolute_url }}">{{ book.title }} - {{ book.isbn13 }}</a></li>
   {% endfor %}
 </ul>
 {% endblock content %}
