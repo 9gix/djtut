@@ -8,4 +8,4 @@ class Book(models.Model):
     description = models.TextField()
 
     def get_absolute_url(self):
-        return reverse('book-detail', args=(self.pk,))
+        return reverse('catalog:book-detail', args=(self.pk,))

@@ -14,13 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+from catalog import urls as catalog_urls
 from django.contrib import admin
 
-from catalog import views as catalog_views
+from . import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^books/(?P<book_id>\d+)/$', catalog_views.book_detail,
-        name='book-detail'),
-    url(r'^$', catalog_views.book_list, name='home')
+    url(r'^books/', include(catalog_urls, namespace='catalog')),
+    url(r'^$', views.homepage, name='home')
 ]
