@@ -1,5 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'catalog/base.html' %}
 {% block content %}
+{{ block.super }}
 <h2>{{ book.title }} - <small>{{ book.isbn13 }}</small></h2>
 <q>{{ book.description }}</q>
 {% endblock content %}

@@ -8,4 +8,6 @@ urlpatterns = [
         name='book-list'),
     url(r'^(?P<book_id>\d+)/$', views.book_detail,
         name='book-detail'),
+    url(r'^search/$', views.search,
+        name='book-search'),
 ]
