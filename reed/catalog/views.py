@@ -18,6 +18,14 @@ def book_detail(request, book_id):
     }
     return render(request, 'catalog/book_detail.html', context)
 
+def intro_python(request):
+    books = Book.objects.python_book().intro_book()
+    context = {
+        'books': books,
+    }
+    return render(request, 'catalog/book_list.html', context)
+
+
 def search(request):
     context = {}
     if 'query' in request.GET:

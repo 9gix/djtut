@@ -10,4 +10,6 @@ urlpatterns = [
         name='book-detail'),
     url(r'^search/$', views.search,
         name='book-search'),
+    url(r'^intro-python/$', views.intro_python,
+        name='intro-python'),
 ]

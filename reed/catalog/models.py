@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 
+from .queryset import BookQuerySet
+
 
 class Book(models.Model):
     isbn13 = models.CharField(max_length=13)
@@ -8,6 +10,8 @@ class Book(models.Model):
     description = models.TextField()
     authors = models.ManyToManyField('catalog.Author')
     publisher = models.ForeignKey('catalog.Publisher')
+
+    objects = BookQuerySet.as_manager()
 
     def get_absolute_url(self):
         return reverse('catalog:book-detail', args=(self.pk,))
