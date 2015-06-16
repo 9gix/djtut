@@ -12,11 +12,20 @@ class Book(models.Model):
     def get_absolute_url(self):
         return reverse('catalog:book-detail', args=(self.pk,))
 
+    def __str__(self):
+        return self.title
+
 class Publisher(models.Model):
     name = models.CharField(max_length=100)
     address = models.TextField()
     website = models.URLField()
 
+    def __str__(self):
+        return self.name
+
 class Author(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
+
+    def __str__(self):
+        return self.name
