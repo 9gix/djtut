@@ -2,5 +2,6 @@
 {% block content %}
 <a href="{% url 'catalog:book-list' %}">All Books</a> - 
 <a href="{% url 'catalog:book-search' %}">Search Books</a> -
-<a href="{% url 'catalog:intro-python' %}">Python Books (Beginner)</a>
+<a href="{% url 'catalog:intro-python' %}">Python Books (Beginner)</a> -
+<a href="{% url 'catalog:bookapi:api-root' %}">API</a> 
 {% endblock content %}

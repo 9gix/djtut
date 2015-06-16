@@ -1,7 +1,10 @@
 from django.shortcuts import render
 
+from rest_framework import viewsets
+
 from .models import Book
 from . import forms
+from . import serializers
 
 
 def book_list(request):
@@ -39,3 +42,8 @@ def search(request):
         context['form'] = forms.SearchForm()
         context['books'] = Book.objects.none()
     return render(request, 'catalog/book_search.html', context)
+
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = serializers.BookSerializer
+
