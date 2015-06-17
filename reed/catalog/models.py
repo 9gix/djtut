@@ -35,12 +35,3 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
-
-
-def user_for_author(sender, instance, created, **kwargs):
-    if created:
-        user = User.objects.filter(email=instance.email).first()
-        full_name = user.get_full_name()
-        Author.objects.filter(pk=instance.pk).update(name=full_name)
-
-post_save.connect(user_for_author, sender=Author)
